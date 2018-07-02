@@ -1,0 +1,12 @@
+* {
+  margin: 2% 2%;
+}
+
+.header {
+  text-align: center;
+}
+
+.box-size {
+  width: 500px;
+  height: 325px;
+}

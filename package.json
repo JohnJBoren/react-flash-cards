@@ -1,0 +1,32 @@
+{
+  "name": "react-flash-cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watchify -vd -t babelify index.js -o main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromechavez/react-flash-cards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeromechavez/react-flash-cards/issues"
+  },
+  "homepage": "https://github.com/jeromechavez/react-flash-cards#readme",
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "babel-plugin-transform-react-jsx": "6.24.1",
+    "babelify": "8.0.0",
+    "browserify": "16.2.2",
+    "watchify": "3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
