@@ -7,13 +7,14 @@ export default class CreateCard extends React.Component {
   }
 
   handleSubmit(event) {
-    const data = new FormData(event.target)
+    event.preventDefault()
+    const target = event.target
+    const data = new FormData(target)
     const newCard = {}
     for (let pair of data.entries()) {
       newCard[pair[0]] = pair[1]
     }
-    this.props.onInputChange(newCard)
-    event.preventDefault()
+    this.props.onInputChange(newCard, target)
   }
 
   render() {

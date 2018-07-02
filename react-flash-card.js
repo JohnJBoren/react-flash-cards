@@ -10,11 +10,11 @@ export default class ReactFlashCards extends React.Component {
     }
   }
 
-  handleInputChange(userInput) {
+  handleInputChange(userInput, form) {
     const updateCards = [...this.state.cards, userInput]
     this.setState({
       cards: updateCards
-    })
+    }, () => form.reset())
   }
   render() {
     return (
