@@ -1,0 +1,17 @@
+* {
+  margin: 2% 2%;
+}
+
+.header {
+  text-align: center;
+}
+
+.create-flashcard {
+  border: 2px solid black;
+  width: 500px;
+  height: 300px;
+}
+
+.button {
+  margin-left: 2%;
+}
