@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CreateCard from './create-card'
+import ReactFlashCards from './react-flash-card'
 
-ReactDOM.render(<CreateCard/>, document.querySelector('#container'))
+ReactDOM.render(<ReactFlashCards/>, document.querySelector('#container'))
