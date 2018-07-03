@@ -5,7 +5,7 @@ export default function CardList(props) {
       <div>
         <ul className="list-style">
           {props.cards.map((card, i) =>
-            <li key={i} className="list-item-spacing">
+            <li key={i} className="list-item">
               <div className="card">
                 <h2 className="card-header"> {card.question} </h2>
                 <div className="card-body"> {card.answer} </div>

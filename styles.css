@@ -1,10 +1,9 @@
 .create-card {
-  width: 500px;
+  width: 750px;
   height: 325px;
 }
 
-.center-button,
-.center-element {
+.center-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +13,7 @@
   list-style-type: none;
 }
 
-.list-item-spacing {
-  margin: 10px auto;
+.list-item {
+  margin-bottom: 10px;
+  width: 750px;
 }
