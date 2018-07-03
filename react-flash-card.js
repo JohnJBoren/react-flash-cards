@@ -7,10 +7,12 @@ import EmptyList from './empty-list'
 export default class ReactFlashCards extends React.Component {
   constructor(props) {
     super(props)
+    const cards = window.localStorage.getItem('cards')
+    const path = window.localStorage.getItem('path')
     this.handleInputChange = this.handleInputChange.bind(this)
     this.state = {
-      cards: [],
-      path: '#new-card'
+      cards: JSON.parse(cards) || [],
+      path: JSON.parse(path) || '#new-card'
     }
   }
 
@@ -20,6 +22,11 @@ export default class ReactFlashCards extends React.Component {
       this.setState({
         path: newPath
       })
+    })
+    window.addEventListener('beforeunload', () => {
+      for (let key in this.state) {
+        localStorage.setItem(key, JSON.stringify(this.state[key]))
+      }
     })
   }
 
@@ -48,6 +55,8 @@ export default class ReactFlashCards extends React.Component {
       case '#card-list':
         return this.renderCardList()
       case '#new-card':
+        return this.renderNewCard()
+      default:
         return this.renderNewCard()
     }
   }
