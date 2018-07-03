@@ -8,11 +8,10 @@ export default class ReactFlashCards extends React.Component {
   constructor(props) {
     super(props)
     const cards = window.localStorage.getItem('cards')
-    const path = window.localStorage.getItem('path')
     this.handleInputChange = this.handleInputChange.bind(this)
     this.state = {
       cards: JSON.parse(cards) || [],
-      path: JSON.parse(path) || '#new-card'
+      path: window.location.hash
     }
   }
 
@@ -24,9 +23,7 @@ export default class ReactFlashCards extends React.Component {
       })
     })
     window.addEventListener('beforeunload', () => {
-      for (let key in this.state) {
-        localStorage.setItem(key, JSON.stringify(this.state[key]))
-      }
+      localStorage.setItem('cards', JSON.stringify(this.state['cards']))
     })
   }
 
