@@ -31,7 +31,23 @@ export default class ReactFlashCards extends React.Component {
   }
 
   renderCardList() {
-    return <CardList cards={ this.state.cards }/>
+    if (this.state.cards.length === 0) {
+      return (
+        <div className="card w-75">
+          <div className="form-group">
+            <h1 className="card-header text-center"> You have no flash cards </h1>
+          </div>
+          <div className="form-group button">
+            <button className="btn btn-primary">
+              <a className="nav-link text-white" href="#new-card">Make One</a>
+            </button>
+          </div>
+        </div>
+      )
+    }
+    else {
+      return <CardList cards={ this.state.cards }/>
+    }
   }
 
   renderNewCard() {
@@ -40,7 +56,7 @@ export default class ReactFlashCards extends React.Component {
 
   renderView() {
     switch (this.state.path) {
-      case '#cards':
+      case '#card-list':
         return this.renderCardList()
       case '#new-card':
         return this.renderNewCard()
@@ -48,7 +64,8 @@ export default class ReactFlashCards extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="flash-cards">
+        <h1 className="text-center">React Flash Cards</h1>
         <Nav/>
         { this.renderView() }
       </div>

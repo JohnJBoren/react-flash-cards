@@ -31,7 +31,7 @@ export default class CreateCard extends React.Component {
             <input type="text" name="answer" className="form-control"/>
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary button">Save</button>
+            <button type="submit" className="btn btn-primary">Save</button>
           </div>
         </div>
       </form>
