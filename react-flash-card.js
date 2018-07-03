@@ -7,7 +7,6 @@ import EmptyList from './empty-list'
 export default class ReactFlashCards extends React.Component {
   constructor(props) {
     super(props)
-    const { path } = window.location.hash
     this.handleInputChange = this.handleInputChange.bind(this)
     this.state = {
       cards: [],

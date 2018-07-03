@@ -20,22 +20,22 @@ export default class CreateCard extends React.Component {
   render() {
     return (
       <div className="center">
-      <form onSubmit= {this.handleSubmit} className="card box-size">
-        <h2 className="card-header text-center">Create a Flash Card</h2>
-        <div className="card-body">
-          <div className="form-group">
-            <label>Question</label>
-            <input type="text" name="question" className="form-control"/>
+        <form onSubmit= {this.handleSubmit} className="card box-size">
+          <h2 className="card-header text-center">Create a Flash Card</h2>
+          <div className="card-body">
+            <div className="form-group">
+              <label>Question</label>
+              <input type="text" name="question" className="form-control"/>
+            </div>
+            <div className="form-group">
+              <label>Answer</label>
+              <input type="text" name="answer" className="form-control"/>
+            </div>
+            <div className="form-group">
+              <button type="submit" className="btn btn-primary">Save</button>
+            </div>
           </div>
-          <div className="form-group">
-            <label>Answer</label>
-            <input type="text" name="answer" className="form-control"/>
-          </div>
-          <div className="form-group">
-            <button type="submit" className="btn btn-primary">Save</button>
-          </div>
-        </div>
-      </form>
+        </form>
       </div>
   )}
 }
