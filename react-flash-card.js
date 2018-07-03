@@ -1,6 +1,7 @@
 import React from 'react'
 import CreateCard from './create-card'
 import Nav from './nav'
+import CardList from './card-list'
 
 export default class ReactFlashCards extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class ReactFlashCards extends React.Component {
       <div>
         <Nav/>
         <CreateCard onInputChange={ this.handleInputChange }/>
+        <CardList/>
       </div>
     )
   }
