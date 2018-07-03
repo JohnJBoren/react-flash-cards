@@ -6,10 +6,10 @@ export default class CardList extends React.Component {
   }
   render() {
     return (
-      <ul className="list-group">
-        {this.props.cards.map((card, i) =>
+      <ul className="list-group w-75">
+        {this.props.cards.map((card) =>
           <li className="list-group-item">
-            <div className="card w-75">
+            <div className="card">
               <h2 className="card-header"> {card.question} </h2>
               <div className="card-body"> {card.answer} </div>
             </div>
