@@ -23,7 +23,7 @@ export default class ReactFlashCards extends React.Component {
       <div>
         <Nav/>
         <CreateCard onInputChange={ this.handleInputChange }/>
-        <CardList/>
+        <CardList cards={ this.state.cards }/>
       </div>
     )
   }
