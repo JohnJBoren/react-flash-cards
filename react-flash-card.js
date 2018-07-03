@@ -55,7 +55,7 @@ export default class ReactFlashCards extends React.Component {
     return (
       <div className="flash-cards container">
         <div className="row">
-          <h1 className="text-center">React Flash Cards</h1>
+          <h1 className="text-center horizontal-margin">React Flash Cards</h1>
         </div>
         <div className="row">
           <Nav/>

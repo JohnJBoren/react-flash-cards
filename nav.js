@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Nav() {
   return (
-    <div>
+    <div className="horizontal-margin">
       <ul className="nav nav-pills">
         <li className="nav-item">
           <a className="nav-link" href="#card-list">Cards</a>

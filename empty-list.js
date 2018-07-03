@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function EmptyList() {
   return (
-    <div>
+    <div className="horizontal-margin">
       <div className="card list-item">
         <div className="form-group">
           <h2 className="text-center vertical-margin"> You have no flash cards </h2>

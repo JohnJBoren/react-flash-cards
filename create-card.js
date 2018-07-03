@@ -19,7 +19,7 @@ export default class CreateCard extends React.Component {
 
   render() {
     return (
-      <div className="center-element">
+      <div className="horizontal-margin">
         <form onSubmit= {this.handleSubmit} className="card create-card">
           <h2 className="text-center vertical-margin">Create a Flash Card</h2>
           <div className="card-body">
