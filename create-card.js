@@ -21,7 +21,7 @@ export default class CreateCard extends React.Component {
     return (
       <form onSubmit= {this.handleSubmit} className="card box-size">
         <div className="card-body">
-          <h2 className="header">Create a Flash Card</h2>
+          <h2 className="text-center">Create a Flash Card</h2>
           <div className="form-group">
             <label>Question</label>
             <input type="text" name="question" className="form-control"/>
