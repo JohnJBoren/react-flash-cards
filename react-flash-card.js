@@ -53,10 +53,16 @@ export default class ReactFlashCards extends React.Component {
   }
   render() {
     return (
-      <div className="flash-cards">
-        <h1 className="text-center">React Flash Cards</h1>
-        <Nav/>
+      <div className="flash-cards container">
+        <div className="row">
+          <h1 className="text-center">React Flash Cards</h1>
+        </div>
+        <div className="row">
+          <Nav/>
+        </div>
+        <div className="row">
           { this.renderView() }
+        </div>
       </div>
     )
   }

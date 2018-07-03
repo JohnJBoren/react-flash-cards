@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Nav () {
   return (
-    <div className="row">
+    <div>
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a className="nav-link" href="#card-list">Cards</a>

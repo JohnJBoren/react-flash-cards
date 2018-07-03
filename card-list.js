@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function CardList(props) {
     return (
-      <div className="center">
-        <ul className="list-group w-75">
-          {this.props.cards.map((card) =>
-            <li key={i} className="list-group-item">
+      <div>
+        <ul className="list-style">
+          {props.cards.map((card, i) =>
+            <li key={i} className="list-item-spacing">
               <div className="card">
                 <h2 className="card-header"> {card.question} </h2>
                 <div className="card-body"> {card.answer} </div>
@@ -15,5 +15,4 @@ export default function CardList(props) {
         </ul>
       </div>
     )
-  }
 }

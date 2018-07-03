@@ -1,11 +1,19 @@
-.box-size {
+.create-card {
   width: 500px;
   height: 325px;
 }
 
-.button,
-.center {
+.center-button,
+.center-element {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.list-style {
+  list-style-type: none;
+}
+
+.list-item-spacing {
+  margin: 10px auto;
 }
