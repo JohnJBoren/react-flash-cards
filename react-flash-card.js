@@ -2,6 +2,7 @@ import React from 'react'
 import CreateCard from './create-card'
 import Nav from './nav'
 import CardList from './card-list'
+import EmptyList from './empty-list'
 
 export default class ReactFlashCards extends React.Component {
   constructor(props) {
@@ -32,20 +33,7 @@ export default class ReactFlashCards extends React.Component {
 
   renderCardList() {
     if (this.state.cards.length === 0) {
-      return (
-        <div className="center">
-        <div className="card w-75">
-          <div className="form-group">
-            <h1 className="card-header text-center"> You have no flash cards </h1>
-          </div>
-          <div className="form-group button">
-            <button className="btn btn-primary">
-              <a className="nav-link text-white" href="#new-card">Make One</a>
-            </button>
-          </div>
-        </div>
-        </div>
-      )
+      return <EmptyList/>
     }
     else {
       return <CardList cards={ this.state.cards }/>
