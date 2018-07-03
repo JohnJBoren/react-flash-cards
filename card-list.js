@@ -7,8 +7,8 @@ export default function CardList(props) {
         {props.cards.map((card, i) =>
           <li key={i} className="list-item vertical-margin">
             <div className="card">
-              <h2> {card.question} </h2>
-              <div className="card-body"> {card.answer} </div>
+              <h2 className="horizontal-margin"> {card.question} </h2>
+              <div className="card-body horizontal-margin"> {card.answer} </div>
             </div>
           </li>
         )}
