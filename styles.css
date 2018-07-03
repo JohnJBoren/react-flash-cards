@@ -1,14 +1,10 @@
-.flash-cards {
-  display: relative;
-  justify-content: center;
-}
-
 .box-size {
   width: 500px;
   height: 325px;
 }
 
-.button {
+.button,
+.center {
   display: flex;
   justify-content: center;
   align-items: center;

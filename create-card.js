@@ -19,6 +19,7 @@ export default class CreateCard extends React.Component {
 
   render() {
     return (
+      <div className="center">
       <form onSubmit= {this.handleSubmit} className="card box-size">
         <h2 className="card-header text-center">Create a Flash Card</h2>
         <div className="card-body">
@@ -35,5 +36,6 @@ export default class CreateCard extends React.Component {
           </div>
         </div>
       </form>
+      </div>
   )}
 }

@@ -6,6 +6,7 @@ export default class CardList extends React.Component {
   }
   render() {
     return (
+      <div className="center">
       <ul className="list-group w-75">
         {this.props.cards.map((card) =>
           <li className="list-group-item">
@@ -16,6 +17,7 @@ export default class CardList extends React.Component {
           </li>)
         }
       </ul>
+      </div>
     )
   }
 }

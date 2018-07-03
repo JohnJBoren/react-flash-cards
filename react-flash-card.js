@@ -33,6 +33,7 @@ export default class ReactFlashCards extends React.Component {
   renderCardList() {
     if (this.state.cards.length === 0) {
       return (
+        <div className="center">
         <div className="card w-75">
           <div className="form-group">
             <h1 className="card-header text-center"> You have no flash cards </h1>
@@ -42,6 +43,7 @@ export default class ReactFlashCards extends React.Component {
               <a className="nav-link text-white" href="#new-card">Make One</a>
             </button>
           </div>
+        </div>
         </div>
       )
     }
@@ -67,7 +69,7 @@ export default class ReactFlashCards extends React.Component {
       <div className="flash-cards">
         <h1 className="text-center">React Flash Cards</h1>
         <Nav/>
-        { this.renderView() }
+          { this.renderView() }
       </div>
     )
   }
