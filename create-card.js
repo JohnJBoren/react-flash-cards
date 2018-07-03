@@ -21,15 +21,15 @@ export default class CreateCard extends React.Component {
     return (
       <div className="center-element">
         <form onSubmit= {this.handleSubmit} className="card create-card">
-          <h2 className="card-header text-center">Create a Flash Card</h2>
+          <h2 className="text-center vertical-margin">Create a Flash Card</h2>
           <div className="card-body">
             <div className="form-group">
               <label>Question</label>
-              <input type="text" name="question" className="form-control"/>
+              <input type="text" name="question" className="form-control input"/>
             </div>
             <div className="form-group">
               <label>Answer</label>
-              <input type="text" name="answer" className="form-control"/>
+              <input type="text" name="answer" className="form-control input"/>
             </div>
             <div className="form-group">
               <button type="submit" className="btn btn-primary">Save</button>
@@ -37,5 +37,6 @@ export default class CreateCard extends React.Component {
           </div>
         </form>
       </div>
-  )}
+    )
+  }
 }

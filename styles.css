@@ -1,5 +1,10 @@
+* {
+  margin: auto;
+}
+
 .create-card {
-  width: 750px;
+  margin-top: 20px;
+  width: 500px;
   height: 325px;
 }
 
@@ -10,10 +15,21 @@
 }
 
 .list-style {
+  margin-top: 20px;
   list-style-type: none;
 }
 
 .list-item {
+  margin-top: 20px;
   margin-bottom: 10px;
-  width: 750px;
+  width: 500px;
+}
+
+.vertical-margin {
+  margin-top: 10px;
+}
+
+.input {
+  resize: horizontal;
+  width: 400px;
 }

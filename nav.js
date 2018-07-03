@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Nav () {
+export default function Nav() {
   return (
     <div>
-      <ul className="nav nav-tabs">
+      <ul className="nav nav-pills">
         <li className="nav-item">
           <a className="nav-link" href="#card-list">Cards</a>
         </li>
