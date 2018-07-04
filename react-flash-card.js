@@ -93,6 +93,8 @@ export default class ReactFlashCards extends React.Component {
           return this.renderCardList()
         case 'new-card':
           return this.renderNewCard()
+        default:
+          return this.renderNewCard()
       }
     }
   }
