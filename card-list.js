@@ -6,7 +6,7 @@ export default function CardList(props) {
     <div className="horizontal-margin">
       <ul className="list-style">
         {props.cards.map((card, i) =>
-          <li key={i} className="list-item vertical-margin">
+          <li key={card.nextId} className="list-item vertical-margin">
             <div className="card">
               <h2 className="horizontal-margin"> {card.question} </h2>
               <div className="card-body horizontal-margin"> {card.answer} </div>

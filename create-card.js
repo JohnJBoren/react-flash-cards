@@ -13,6 +13,7 @@ export default class CreateCard extends React.Component {
     const newCard = {}
     for (let pair of data.entries()) {
       newCard[pair[0]] = pair[1]
+      newCard['nextId'] = this.props.nextId
     }
     this.props.onInputChange(newCard, target)
   }
