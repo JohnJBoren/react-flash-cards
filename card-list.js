@@ -1,5 +1,5 @@
 import React from 'react'
-import EditCard from './edit-card'
+import EditCard from './edit-button'
 
 export default function CardList(props) {
   return (
