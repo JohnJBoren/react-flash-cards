@@ -11,9 +11,10 @@ export default class ReactFlashCards extends React.Component {
     const nextId = window.localStorage.getItem('nextId')
     this.handleInputChange = this.handleInputChange.bind(this)
     this.state = {
+      nextId: JSON.parse(nextId) || 1,
       cards: JSON.parse(cards) || [],
-      path: window.location.hash,
-      nextId: JSON.parse(nextId) || 1
+      path: window.location.hash
+
     }
   }
 
