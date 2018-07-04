@@ -8,8 +8,8 @@ export default class CardList extends React.Component {
 
   handleClick(event) {
     const $listItem = event.target.closest('.list-item')
-    const cardId = $listItem.value
-    console.log(cardId)
+    const id = $listItem.value
+    this.props.navigate({ path: 'card-list', params: { id } })
 
   }
   render() {
