@@ -1,4 +1,5 @@
 import React from 'react'
+import EditCard from './edit-card'
 
 export default function CardList(props) {
   return (
@@ -9,6 +10,7 @@ export default function CardList(props) {
             <div className="card">
               <h2 className="horizontal-margin"> {card.question} </h2>
               <div className="card-body horizontal-margin"> {card.answer} </div>
+              <EditCard/>
             </div>
           </li>
         )}
