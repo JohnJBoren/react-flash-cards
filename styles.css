@@ -28,3 +28,10 @@
 .horizontal-margin {
   margin: auto;
 }
+
+.edit-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
