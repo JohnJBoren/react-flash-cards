@@ -56,22 +56,15 @@ export default class ReactFlashCards extends React.Component {
     const updateCards = [...this.state.cards]
     const elementIndex = updateCards.map(x => x.id).indexOf(id)
     updateCards.splice(elementIndex, 1, editedCard)
-    this.setState({
-      cards: updateCards,
-      path: 'card-list',
-      params: {}
-    })
+    this.navigate('card-list', {})
+    this.setState({ cards: updateCards })
   }
 
   handleDeleteChange(id) {
     const updateCards = [...this.state.cards]
     const elementIndex = updateCards.map(x => x.id).indexOf(id)
     updateCards.splice(elementIndex, 1)
-    this.setState({
-      cards: updateCards,
-      path: 'card-list',
-      params: {}
-    })
+    this.setState({ cards: updateCards })
   }
 
   renderCardList() {
