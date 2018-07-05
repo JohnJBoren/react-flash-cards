@@ -17,11 +17,15 @@ export default class CardList extends React.Component {
       <div className="horizontal-margin">
         <ul className="list-style">
           {this.props.cards.map((card, i) =>
-            <li key={card.id} value={card.id} className="list-item vertical-margin">
+            <li key={card.id} value={card.id} className="list-item">
               <div className="card">
-                <h2 className="horizontal-margin"> {card.question} </h2>
-                <div className="card-body horizontal-margin"> {card.answer} </div>
-                <i onClick={ this.handleClick } className="edit-button fas fa-edit"></i>
+                <div className="card-body text-center">
+                  <h2> {card.question} </h2>
+                  <div className="card-body"> {card.answer} </div>
+                  <div className="text-right">
+                    <i onClick={ this.handleClick } className="fas fa-edit"></i>
+                  </div>
+                </div>
               </div>
             </li>
           )}
