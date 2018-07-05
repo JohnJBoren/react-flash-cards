@@ -14,6 +14,7 @@ export default class ReactFlashCards extends React.Component {
     const { path, params } = parseHash(window.location.hash)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleEditChange = this.handleEditChange.bind(this)
+    this.handleDeleteChange = this.handleDeleteChange.bind(this)
     this.navigate = this.navigate.bind(this)
     this.state = {
       nextId: JSON.parse(nextId) || 1,
@@ -51,15 +52,19 @@ export default class ReactFlashCards extends React.Component {
     }, () => form.reset())
   }
 
-  handleEditChange(editedCard) {
+  handleEditChange(id, editedCard) {
     const updateCards = [...this.state.cards]
-    const elementId = updateCards.map(x => x.id).indexOf(editedCard.id)
-    updateCards.splice(elementId, 1, editedCard)
-    this.setState({
-      cards: updateCards,
-      path: 'card-list',
-      params: {}
-    })
+    const elementIndex = updateCards.map(x => x.id).indexOf(id)
+    updateCards.splice(elementIndex, 1, editedCard)
+    this.navigate('card-list', {})
+    this.setState({ cards: updateCards })
+  }
+
+  handleDeleteChange(id) {
+    const updateCards = [...this.state.cards]
+    const elementIndex = updateCards.map(x => x.id).indexOf(id)
+    updateCards.splice(elementIndex, 1)
+    this.setState({ cards: updateCards })
   }
 
   renderCardList() {
@@ -67,7 +72,12 @@ export default class ReactFlashCards extends React.Component {
       return <EmptyList/>
     }
     else {
-      return <CardList cards={ this.state.cards } navigate={this.navigate}/>
+      return (
+        <CardList
+          cards={ this.state.cards }
+          navigate={ this.navigate }
+          deleteItem= { this.handleDeleteChange }/>
+      )
     }
   }
 

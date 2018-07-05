@@ -29,6 +29,7 @@
   margin: auto;
 }
 
-.edit-button {
+.edit-button,
+.delete-button {
   cursor: pointer;
 }
