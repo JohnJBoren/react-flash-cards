@@ -26,7 +26,7 @@ export default class CardForm extends React.Component {
   }
 
   render() {
-    const { header, editCard } = this.props
+    const { header, editCard, id } = this.props
     const formHeader = header === 'new'
       ? 'Create a Flash Card'
       : 'Edit a Flash Card'
@@ -35,7 +35,7 @@ export default class CardForm extends React.Component {
 
     return (
       <div className="horizontal-margin">
-        <form onSubmit= {this.handleSubmit} className="card create-card">
+        <form onSubmit= {this.handleSubmit} key={ id } className="card create-card">
           <h2 className="text-center vertical-margin">{ formHeader }</h2>
           <div className="card-body">
             <div className="form-group">
