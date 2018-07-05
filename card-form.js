@@ -20,7 +20,7 @@ export default class CardForm extends React.Component {
       onInputChange(objCard, target)
     }
     else {
-      onEditChange(objCard, id)
+      onEditChange(id, objCard)
       navigate({ path: 'card-list' })
     }
   }
