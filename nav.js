@@ -10,6 +10,9 @@ export default function Nav() {
         <li className="nav-item">
           <a className="nav-link" href="#new-card">New</a>
         </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#practice">Practice</a>
+        </li>
       </ul>
     </div>
   )
