@@ -8,7 +8,7 @@ export default class CardList extends React.Component {
 
   handleClick(event) {
     const $listItem = event.target.closest('.list-item')
-    const id = $listItem.value
+    const id = $listItem.dataset.id
     this.props.navigate({ path: 'card-list', params: { id } })
 
   }
@@ -17,7 +17,7 @@ export default class CardList extends React.Component {
       <div className="horizontal-margin">
         <ul className="list-style">
           {this.props.cards.map((card, i) =>
-            <li key={card.id} value={card.id} className="list-item">
+            <li key={card.id} data-id={card.id} className="list-item">
               <div className="card">
                 <div className="card-body text-center">
                   <h2> {card.question} </h2>
