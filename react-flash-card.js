@@ -74,7 +74,7 @@ export default class ReactFlashCards extends React.Component {
   renderEditCard() {
     const { cards } = this.state
     const { id } = this.state.params
-    const parsedId = parseInt(id)
+    const parsedId = parseInt(id, 10)
     const editCard = cards.find(card => card.id === parsedId)
     return (
       <CardForm
