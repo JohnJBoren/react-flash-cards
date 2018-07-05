@@ -1,9 +1,8 @@
 import React from 'react'
-import CreateCard from './create-card'
 import Nav from './nav'
 import CardList from './card-list'
-import EditCard from './edit-card'
 import EmptyList from './empty-list'
+import CardForm from './card-form'
 import parseHash from './parse-hash'
 import * as queryString from './query-string'
 
@@ -19,7 +18,7 @@ export default class ReactFlashCards extends React.Component {
     this.state = {
       nextId: JSON.parse(nextId) || 1,
       cards: JSON.parse(cards) || [],
-      path: path || 'new-card',
+      path: path,
       params: params || {}
 
     }
@@ -58,6 +57,7 @@ export default class ReactFlashCards extends React.Component {
     updateCards.splice(elementId, 1, editedCard)
     this.setState({
       cards: updateCards,
+      path: 'card-list',
       params: {}
     })
   }
@@ -76,11 +76,23 @@ export default class ReactFlashCards extends React.Component {
     const { id } = this.state.params
     const parsedId = parseInt(id)
     const editCard = cards.find(card => card.id === parsedId)
-    return <EditCard editCard={ editCard } onEditChange={ this.handleEditChange }/>
+    return (
+      <CardForm
+        header={'edit'}
+        id={ parsedId }
+        editCard={ editCard }
+        navigate={ this.navigate }
+        onEditChange={ this.handleEditChange }/>
+    )
   }
 
   renderNewCard() {
-    return <CreateCard nextId={this.state.nextId} onInputChange={ this.handleInputChange }/>
+    return (
+      <CardForm
+        header={'new'}
+        id={ this.state.nextId }
+        onInputChange={ this.handleInputChange }/>
+    )
   }
 
   renderView() {

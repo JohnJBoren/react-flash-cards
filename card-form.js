@@ -1,40 +1,56 @@
 import React from 'react'
 
-export default class EditCard extends React.Component {
+export default class CardForm extends React.Component {
   constructor(props) {
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
   handleSubmit(event) {
     event.preventDefault()
+    const { header, onEditChange, onInputChange, id, navigate } = this.props
     const target = event.target
     const data = new FormData(target)
-    const editedCard = {}
+    const objCard = {}
     for (let pair of data.entries()) {
-      editedCard[pair[0]] = pair[1]
-      editedCard['id'] = this.props.editCard.id
+      objCard[pair[0]] = pair[1]
+      objCard['id'] = id
     }
-    this.props.onEditChange(editedCard)
+    if (header === 'new') {
+      onInputChange(objCard, target)
+    }
+    else {
+      onEditChange(objCard, id)
+      navigate({ path: 'card-list' })
+    }
   }
+
   render() {
+    const { header, editCard } = this.props
+    const formHeader = header === 'new'
+      ? 'Create a Flash Card'
+      : 'Edit a Flash Card'
+
+    const { question, answer } = editCard || { question: '', answer: '' }
+
     return (
       <div className="horizontal-margin">
         <form onSubmit= {this.handleSubmit} className="card create-card">
-          <h2 className="text-center vertical-margin">Edit a Flash Card</h2>
+          <h2 className="text-center vertical-margin">{ formHeader }</h2>
           <div className="card-body">
             <div className="form-group">
               <label>Question</label>
               <input type="text"
                 name="question"
                 className="form-control input"
-                defaultValue={this.props.editCard.question}/>
+                defaultValue={ question }/>
             </div>
             <div className="form-group">
               <label>Answer</label>
               <input type="text"
                 name="answer"
                 className="form-control input"
-                defaultValue={this.props.editCard.answer}/>
+                defaultValue={ answer }/>
             </div>
             <div className="form-group">
               <button type="submit" className="btn btn-primary">Save</button>
