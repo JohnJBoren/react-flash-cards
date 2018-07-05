@@ -28,3 +28,7 @@
 .horizontal-margin {
   margin: auto;
 }
+
+.edit-button {
+  cursor: pointer;
+}
