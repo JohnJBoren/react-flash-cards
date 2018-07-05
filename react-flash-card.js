@@ -34,9 +34,9 @@ export default class ReactFlashCards extends React.Component {
       })
     })
     window.addEventListener('beforeunload', () => {
-      for (let key in this.state) {
-        localStorage.setItem(key, JSON.stringify(this.state[key]))
-      }
+      localStorage.setItem('nextId', JSON.stringify(this.state['nextId']))
+      localStorage.setItem('cards', JSON.stringify(this.state['cards']))
+
     })
   }
 
