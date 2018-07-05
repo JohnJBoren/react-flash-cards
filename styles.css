@@ -15,14 +15,15 @@
   list-style-type: none;
 }
 
-.list-item {
+.list-item,
+.practice-card {
   margin-top: 20px;
   margin-bottom: 10px;
   width: 500px;
 }
 
 .vertical-margin {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .horizontal-margin {

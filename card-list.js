@@ -29,7 +29,7 @@ export default class CardList extends React.Component {
               <div className="card">
                 <div className="card-body text-center">
                   <h2> {card.question} </h2>
-                  <div className="card-body"> {card.answer} </div>
+                  <div> {card.answer} </div>
                   <div className="text-right">
                     <i onClick={ this.handleClick }
                       name="edit"

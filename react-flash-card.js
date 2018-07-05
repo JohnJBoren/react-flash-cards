@@ -3,6 +3,7 @@ import Nav from './nav'
 import CardList from './card-list'
 import EmptyList from './empty-list'
 import CardForm from './card-form'
+import PracticeCard from './practice-card'
 import parseHash from './parse-hash'
 import * as queryString from './query-string'
 
@@ -105,6 +106,12 @@ export default class ReactFlashCards extends React.Component {
     )
   }
 
+  renderPracticeCard() {
+    return (
+      <PracticeCard/>
+    )
+  }
+
   renderView() {
     switch (this.state.path) {
       case 'card-list':
@@ -116,6 +123,8 @@ export default class ReactFlashCards extends React.Component {
         }
       case 'new-card':
         return this.renderNewCard()
+      case 'practice':
+        return this.renderPracticeCard()
       default:
         return this.renderNewCard()
     }
