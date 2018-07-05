@@ -23,7 +23,7 @@ export default class CardList extends React.Component {
                   <h2> {card.question} </h2>
                   <div className="card-body"> {card.answer} </div>
                   <div className="text-right">
-                    <i onClick={ this.handleClick } className="fas fa-edit"></i>
+                    <i onClick={ this.handleClick } className="edit-button fas fa-edit"></i>
                   </div>
                 </div>
               </div>

@@ -19,8 +19,8 @@ export default class ReactFlashCards extends React.Component {
     this.state = {
       nextId: JSON.parse(nextId) || 1,
       cards: JSON.parse(cards) || [],
-      path: path,
-      params: params
+      path: path || 'new-card',
+      params: params || {}
 
     }
   }
@@ -84,18 +84,18 @@ export default class ReactFlashCards extends React.Component {
   }
 
   renderView() {
-    if (Object.keys(this.state.params).length !== 0) {
-      return this.renderEditCard()
-    }
-    else {
-      switch (this.state.path) {
-        case 'card-list':
+    switch (this.state.path) {
+      case 'card-list':
+        if (this.state.params.hasOwnProperty('id')) {
+          return this.renderEditCard()
+        }
+        else {
           return this.renderCardList()
-        case 'new-card':
-          return this.renderNewCard()
-        default:
-          return this.renderNewCard()
-      }
+        }
+      case 'new-card':
+        return this.renderNewCard()
+      default:
+        return this.renderNewCard()
     }
   }
   render() {
