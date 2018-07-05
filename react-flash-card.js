@@ -21,7 +21,8 @@ export default class ReactFlashCards extends React.Component {
       nextId: JSON.parse(nextId) || 1,
       cards: JSON.parse(cards) || [],
       path: path,
-      params: params || {}
+      params: params || {},
+      currentPracticeIndex: 0
 
     }
   }
@@ -107,9 +108,16 @@ export default class ReactFlashCards extends React.Component {
   }
 
   renderPracticeCard() {
-    return (
-      <PracticeCard/>
-    )
+    if (this.state.cards.length === 0) {
+      return <EmptyList/>
+    }
+    else {
+      return (
+        <PracticeCard
+          currentIndex={ this.state.currentPracticeIndex }
+          cards={ this.state.cards }/>
+      )
+    }
   }
 
   renderView() {
