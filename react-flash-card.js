@@ -79,12 +79,12 @@ export default class ReactFlashCards extends React.Component {
     if (action === 'previous') {
       const shouldResetIndex = currentIndex === 0
       const index = shouldResetIndex ? lastIndex : currentIndex - 1
-      this.setState({ currentIndex: index })
+      this.setState({ currentIndex: index, showAnswer: false })
     }
     else {
       const shouldResetIndex = currentIndex === lastIndex
       const index = shouldResetIndex ? 0 : currentIndex + 1
-      this.setState({ currentIndex: index })
+      this.setState({ currentIndex: index, showAnswer: false })
     }
   }
 
