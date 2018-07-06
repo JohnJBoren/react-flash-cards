@@ -1,8 +1,21 @@
 import React from 'react'
 
 export default class PracticeCard extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    this.props.onAnswerChange()
+  }
+
   render() {
-    const { currentIndex, cards } = this.props
+    const { currentIndex, cards, showAnswer } = this.props
+    const isHidden = showAnswer ? '' : 'hidden'
+    const showArrow = showAnswer
+      ? 'fa-arrow-circle-down'
+      : 'fa-arrow-circle-right'
     return (
       <div className="horizontal-margin practice-card">
         <div className="card vertical-margin text-center">
@@ -13,12 +26,15 @@ export default class PracticeCard extends React.Component {
           </div>
           <div className="row">
             <div className="card-body">
-              <i onClick={ this.handleClick } className="fas px-2  fa-arrow-circle-down"></i>
+              <i
+                onClick={ this.handleClick }
+                className={'arrow-button fas px-2 ' + showArrow }>
+              </i>
               Show Answer
             </div>
           </div>
           <div className="row">
-            <div className="card-body">
+            <div className={ 'card-body ' + isHidden }>
               <p> { cards[currentIndex].answer } </p>
             </div>
           </div>
