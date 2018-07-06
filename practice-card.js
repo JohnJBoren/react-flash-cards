@@ -1,5 +1,6 @@
 import React from 'react'
 import ArrowNav from './arrow-nav'
+import ProgressBar from './progress-bar'
 
 export default class PracticeCard extends React.Component {
   constructor(props) {
@@ -40,34 +41,39 @@ export default class PracticeCard extends React.Component {
       ? 'fa-arrow-circle-down'
       : 'fa-arrow-circle-right'
     return (
-      <div className="horizontal-margin row">
-        <ArrowNav
-          type={'left'}
-          onSlideChange={ this.handleSlideChange }/>
-        <div className="card practice-card vertical-margin text-center">
-          <div className="row">
-            <div className="card-body">
-              <h2> { cards[this.state.currentIndex].question } </h2>
+      <div className="practice horizontal-margin">
+        <div className="row">
+          <ArrowNav
+            type={'left'}
+            onSlideChange={ this.handleSlideChange }/>
+          <div className="card practice-card vertical-margin text-center">
+            <div className="row">
+              <div className="card-body">
+                <h2> { cards[this.state.currentIndex].question } </h2>
+              </div>
+            </div>
+            <div className="row">
+              <div className="card-body">
+                <i
+                  onClick={ this.handleAnswerChange }
+                  className={'arrow-button fas px-2 ' + showArrow }>
+                </i>
+                Show Answer
+              </div>
+            </div>
+            <div className="row">
+              <div className={ 'card-body ' + isHidden }>
+                <p> { cards[this.state.currentIndex].answer } </p>
+              </div>
             </div>
           </div>
-          <div className="row">
-            <div className="card-body">
-              <i
-                onClick={ this.handleAnswerChange }
-                className={'arrow-button fas px-2 ' + showArrow }>
-              </i>
-              Show Answer
-            </div>
-          </div>
-          <div className="row">
-            <div className={ 'card-body ' + isHidden }>
-              <p> { cards[this.state.currentIndex].answer } </p>
-            </div>
-          </div>
+          <ArrowNav
+            type= {'right'}
+            onSlideChange={ this.handleSlideChange }/>
         </div>
-        <ArrowNav
-          type= {'right'}
-          onSlideChange={ this.handleSlideChange }/>
+        <div className="row">
+          <ProgressBar cards={ cards } index={ this.state.currentIndex }/>
+        </div>
       </div>
     )
   }
