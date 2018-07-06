@@ -31,7 +31,8 @@
 }
 
 .edit-button,
-.delete-button {
+.delete-button,
+.arrow-button {
   cursor: pointer;
 }
 

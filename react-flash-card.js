@@ -17,13 +17,14 @@ export default class ReactFlashCards extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleEditChange = this.handleEditChange.bind(this)
     this.handleDeleteChange = this.handleDeleteChange.bind(this)
+    this.handleSlideChange = this.handleSlideChange.bind(this)
     this.navigate = this.navigate.bind(this)
     this.state = {
       nextId: JSON.parse(nextId) || 1,
       cards: JSON.parse(cards) || [],
       path: path,
       params: params || {},
-      currentPracticeIndex: 0
+      currentIndex: 0
 
     }
   }
@@ -68,6 +69,22 @@ export default class ReactFlashCards extends React.Component {
     const elementIndex = updateCards.map(x => x.id).indexOf(id)
     updateCards.splice(elementIndex, 1)
     this.setState({ cards: updateCards })
+  }
+
+  handleSlideChange(action) {
+    const lastIndex = this.state.cards.length - 1
+    const currentIndex = this.state.currentIndex
+    if (action === 'previous') {
+      const shouldResetIndex = currentIndex === 0
+      const index = shouldResetIndex ? lastIndex : currentIndex - 1
+      this.setState({ currentIndex: index })
+    }
+    else {
+      const shouldResetIndex = currentIndex === lastIndex
+      const index = shouldResetIndex ? 0 : currentIndex + 1
+      this.setState({ currentIndex: index })
+    }
+
   }
 
   renderCardList() {
@@ -115,11 +132,11 @@ export default class ReactFlashCards extends React.Component {
     else {
       return (
         <div className="row horizontal-margin">
-          <ArrowNav type={'left'}/>
+          <ArrowNav type={'left'} onSlideChange={ this.handleSlideChange }/>
           <PracticeCard
-            currentIndex={ this.state.currentPracticeIndex }
+            currentIndex={ this.state.currentIndex }
             cards={ this.state.cards }/>
-          <ArrowNav type= {'right'}/>
+          <ArrowNav type= {'right'} onSlideChange={ this.handleSlideChange }/>
         </div>
       )
     }

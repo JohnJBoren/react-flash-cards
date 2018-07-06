@@ -13,7 +13,7 @@ export default class PracticeCard extends React.Component {
           </div>
           <div className="row">
             <div className="card-body">
-              <i className="fas fa-arrow-circle-down px-2"></i>
+              <i onClick={ this.handleClick } className="fas px-2  fa-arrow-circle-down"></i>
               Show Answer
             </div>
           </div>
