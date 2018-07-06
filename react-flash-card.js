@@ -139,10 +139,7 @@ export default class ReactFlashCards extends React.Component {
   render() {
     return (
       <div className="flash-cards container">
-        <div className="row">
-          <h1 className="horizontal-margin">React Flash Cards</h1>
-        </div>
-        <div className="row">
+        <div className="row bg-dark">
           <Nav/>
         </div>
         <div className="row">

@@ -2,18 +2,11 @@ import React from 'react'
 
 export default function Nav() {
   return (
-    <div className="horizontal-margin">
-      <ul className="nav nav-pills">
-        <li className="nav-item">
-          <a className="nav-link" href="#card-list">Cards</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#new-card">New</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#practice">Practice</a>
-        </li>
-      </ul>
-    </div>
+    <nav className="sticky-top navbar">
+      <h4 className="text-white">React Flash Cards</h4>
+      <a className="nav-link text-white" href="#card-list">Cards</a>
+      <a className="nav-link text-white" href="#new-card">New</a>
+      <a className="nav-link text-white" href="#practice">Practice</a>
+    </nav>
   )
 }

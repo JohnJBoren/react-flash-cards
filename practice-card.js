@@ -42,7 +42,7 @@ export default class PracticeCard extends React.Component {
       : 'fa-arrow-circle-right'
     return (
       <div className="practice horizontal-margin">
-        <div className="row">
+        <div className="row vertical-margin">
           <ProgressBar cards={ cards } index={ this.state.currentIndex }/>
         </div>
         <div className="row">
