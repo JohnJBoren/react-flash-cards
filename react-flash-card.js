@@ -18,13 +18,15 @@ export default class ReactFlashCards extends React.Component {
     this.handleEditChange = this.handleEditChange.bind(this)
     this.handleDeleteChange = this.handleDeleteChange.bind(this)
     this.handleSlideChange = this.handleSlideChange.bind(this)
+    this.handleAnswerChange = this.handleAnswerChange.bind(this)
     this.navigate = this.navigate.bind(this)
     this.state = {
       nextId: JSON.parse(nextId) || 1,
       cards: JSON.parse(cards) || [],
       path: path,
       params: params || {},
-      currentIndex: 0
+      currentIndex: 0,
+      showAnswer: false
 
     }
   }
@@ -84,7 +86,11 @@ export default class ReactFlashCards extends React.Component {
       const index = shouldResetIndex ? 0 : currentIndex + 1
       this.setState({ currentIndex: index })
     }
+  }
 
+  handleAnswerChange() {
+    const showAnswer = this.state.showAnswer
+    this.setState({ showAnswer: !showAnswer })
   }
 
   renderCardList() {
@@ -132,11 +138,17 @@ export default class ReactFlashCards extends React.Component {
     else {
       return (
         <div className="row horizontal-margin">
-          <ArrowNav type={'left'} onSlideChange={ this.handleSlideChange }/>
+          <ArrowNav
+            type={'left'}
+            onSlideChange={ this.handleSlideChange }/>
           <PracticeCard
+            onAnswerChange={ this.handleAnswerChange }
+            showAnswer={ this.state.showAnswer }
             currentIndex={ this.state.currentIndex }
             cards={ this.state.cards }/>
-          <ArrowNav type= {'right'} onSlideChange={ this.handleSlideChange }/>
+          <ArrowNav
+            type= {'right'}
+            onSlideChange={ this.handleSlideChange }/>
         </div>
       )
     }
