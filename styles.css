@@ -39,3 +39,7 @@
 .line-height {
   line-height: 250px;
 }
+
+.hidden {
+  display: none;
+}
