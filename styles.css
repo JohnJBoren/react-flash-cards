@@ -1,5 +1,5 @@
 .create-card {
-  margin-top: 20px;
+  margin-top: 100px;
   width: 500px;
   height: 325px;
 }
@@ -11,24 +11,19 @@
 }
 
 .list-style {
-  margin-top: 20px;
+  margin-top: 100px;
   list-style-type: none;
 }
 
 .list-item,
 .practice-card,
 .bar-progress {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 500px;
 }
 
 .vertical-margin {
-  margin-top: 20px;
-}
-
-.horizontal-margin {
-  margin: auto;
+  margin-top: 100px;
 }
 
 .edit-button,

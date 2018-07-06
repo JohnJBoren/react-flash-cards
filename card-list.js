@@ -22,7 +22,7 @@ export default class CardList extends React.Component {
   render() {
     const { cards } = this.props
     return (
-      <div className="horizontal-margin">
+      <div className="mx-auto">
         <ul className="list-style">
           { cards.map((card, i) =>
             <li key={card.id} data-id={card.id} className="list-item">

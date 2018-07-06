@@ -138,11 +138,11 @@ export default class ReactFlashCards extends React.Component {
   }
   render() {
     return (
-      <div className="flash-cards container">
-        <div className="row bg-dark">
+      <div className="flash-cards mx-auto container">
+        <div className="row bg-dark fixed-top">
           <Nav/>
         </div>
-        <div className="row">
+        <div className="row mt-5">
           { this.renderView() }
         </div>
       </div>

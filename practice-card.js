@@ -41,7 +41,7 @@ export default class PracticeCard extends React.Component {
       ? 'fa-arrow-circle-down'
       : 'fa-arrow-circle-right'
     return (
-      <div className="practice horizontal-margin">
+      <div className="practice mx-auto">
         <div className="row vertical-margin">
           <ProgressBar cards={ cards } index={ this.state.currentIndex }/>
         </div>
@@ -49,7 +49,7 @@ export default class PracticeCard extends React.Component {
           <ArrowNav
             type="left"
             onSlideChange={ this.handleSlideChange }/>
-          <div className="card practice-card vertical-margin text-center">
+          <div className="card practice-card text-center">
             <div className="row">
               <div className="card-body">
                 <h2> { cards[this.state.currentIndex].question } </h2>
