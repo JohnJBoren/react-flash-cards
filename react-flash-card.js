@@ -4,7 +4,6 @@ import CardList from './card-list'
 import EmptyList from './empty-list'
 import CardForm from './card-form'
 import PracticeCard from './practice-card'
-import ArrowNav from './arrow-nav'
 import parseHash from './parse-hash'
 import * as queryString from './query-string'
 
@@ -17,8 +16,6 @@ export default class ReactFlashCards extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleEditChange = this.handleEditChange.bind(this)
     this.handleDeleteChange = this.handleDeleteChange.bind(this)
-    this.handleSlideChange = this.handleSlideChange.bind(this)
-    this.handleAnswerChange = this.handleAnswerChange.bind(this)
     this.navigate = this.navigate.bind(this)
     this.state = {
       nextId: JSON.parse(nextId) || 1,
@@ -73,26 +70,6 @@ export default class ReactFlashCards extends React.Component {
     this.setState({ cards: updateCards })
   }
 
-  handleSlideChange(action) {
-    const lastIndex = this.state.cards.length - 1
-    const currentIndex = this.state.currentIndex
-    if (action === 'previous') {
-      const shouldResetIndex = currentIndex === 0
-      const index = shouldResetIndex ? lastIndex : currentIndex - 1
-      this.setState({ currentIndex: index, showAnswer: false })
-    }
-    else {
-      const shouldResetIndex = currentIndex === lastIndex
-      const index = shouldResetIndex ? 0 : currentIndex + 1
-      this.setState({ currentIndex: index, showAnswer: false })
-    }
-  }
-
-  handleAnswerChange() {
-    const showAnswer = this.state.showAnswer
-    this.setState({ showAnswer: !showAnswer })
-  }
-
   renderCardList() {
     if (this.state.cards.length === 0) {
       return <EmptyList/>
@@ -137,19 +114,7 @@ export default class ReactFlashCards extends React.Component {
     }
     else {
       return (
-        <div className="row horizontal-margin">
-          <ArrowNav
-            type={'left'}
-            onSlideChange={ this.handleSlideChange }/>
-          <PracticeCard
-            onAnswerChange={ this.handleAnswerChange }
-            showAnswer={ this.state.showAnswer }
-            currentIndex={ this.state.currentIndex }
-            cards={ this.state.cards }/>
-          <ArrowNav
-            type= {'right'}
-            onSlideChange={ this.handleSlideChange }/>
-        </div>
+        <PracticeCard cards={ this.state.cards }/>
       )
     }
   }
