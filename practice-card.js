@@ -43,8 +43,11 @@ export default class PracticeCard extends React.Component {
     return (
       <div className="practice horizontal-margin">
         <div className="row">
+          <ProgressBar cards={ cards } index={ this.state.currentIndex }/>
+        </div>
+        <div className="row">
           <ArrowNav
-            type={'left'}
+            type="left"
             onSlideChange={ this.handleSlideChange }/>
           <div className="card practice-card vertical-margin text-center">
             <div className="row">
@@ -68,11 +71,8 @@ export default class PracticeCard extends React.Component {
             </div>
           </div>
           <ArrowNav
-            type= {'right'}
+            type="right"
             onSlideChange={ this.handleSlideChange }/>
-        </div>
-        <div className="row">
-          <ProgressBar cards={ cards } index={ this.state.currentIndex }/>
         </div>
       </div>
     )
