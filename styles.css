@@ -16,7 +16,8 @@
 }
 
 .list-item,
-.practice-card {
+.practice-card,
+.bar-progress {
   margin-top: 20px;
   margin-bottom: 10px;
   width: 500px;
@@ -36,8 +37,12 @@
   cursor: pointer;
 }
 
-.line-height {
+.arrow-height {
   line-height: 250px;
+}
+
+.bar-div {
+  height: 25px;
 }
 
 .hidden {
