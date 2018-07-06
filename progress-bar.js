@@ -10,7 +10,7 @@ export default function ProgressBar(props) {
   }
   return (
     <div className="bar-progress card horizontal-margin">
-      <div className="bar-div" style={ style }></div>
+      <div className="bar-current-progress" style={ style }></div>
     </div>
   )
 }

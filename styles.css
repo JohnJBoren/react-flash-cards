@@ -37,11 +37,11 @@
   cursor: pointer;
 }
 
-.arrow-height {
+.arrow-nav {
   line-height: 250px;
 }
 
-.bar-div {
+.bar-current-progress {
   height: 25px;
 }
 
