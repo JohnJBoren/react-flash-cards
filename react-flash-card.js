@@ -4,6 +4,7 @@ import CardList from './card-list'
 import EmptyList from './empty-list'
 import CardForm from './card-form'
 import PracticeCard from './practice-card'
+import ArrowNav from './arrow-nav'
 import parseHash from './parse-hash'
 import * as queryString from './query-string'
 
@@ -113,9 +114,13 @@ export default class ReactFlashCards extends React.Component {
     }
     else {
       return (
-        <PracticeCard
-          currentIndex={ this.state.currentPracticeIndex }
-          cards={ this.state.cards }/>
+        <div className="row horizontal-margin">
+          <ArrowNav type={'left'}/>
+          <PracticeCard
+            currentIndex={ this.state.currentPracticeIndex }
+            cards={ this.state.cards }/>
+          <ArrowNav type= {'right'}/>
+        </div>
       )
     }
   }
