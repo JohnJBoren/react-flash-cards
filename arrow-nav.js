@@ -22,7 +22,7 @@ export default class ArrowNav extends React.Component {
     return (
       <i
         onClick={ this.handleClick }
-        className={'arrow-button fas fa-7x align-middle px-2 line-height ' + direction }
+        className={'arrow-button fas fa-5x align-middle px-2 line-height ' + direction }
         name={ activity }>
       </i>
     )
