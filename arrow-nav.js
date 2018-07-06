@@ -8,9 +8,7 @@ export default class ArrowNav extends React.Component {
 
   handleClick(event) {
     const action = event.target.getAttribute('name')
-    console.log(action)
     this.props.onSlideChange(action)
-
   }
   render() {
     const { type } = this.props
