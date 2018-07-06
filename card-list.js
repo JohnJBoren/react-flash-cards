@@ -10,7 +10,7 @@ export default class CardList extends React.Component {
     const { navigate, deleteItem } = this.props
     const action = event.target.getAttribute('name')
     const $listItem = event.target.closest('.list-item')
-    const id = $listItem.dataset.id
+    const id = parseInt($listItem.dataset.id, 10)
     if (action === 'edit') {
       navigate({ path: 'card-list', params: { id } })
     }
@@ -29,7 +29,7 @@ export default class CardList extends React.Component {
               <div className="card">
                 <div className="card-body text-center">
                   <h2> {card.question} </h2>
-                  <div className="card-body"> {card.answer} </div>
+                  <div> {card.answer} </div>
                   <div className="text-right">
                     <i onClick={ this.handleClick }
                       name="edit"
