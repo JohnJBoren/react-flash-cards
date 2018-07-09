@@ -18,7 +18,7 @@
 .list-item,
 .practice-card,
 .bar-progress {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 500px;
 }
 
@@ -42,4 +42,8 @@
 
 .hidden {
   display: none;
+}
+
+.logo {
+  float: left;
 }
