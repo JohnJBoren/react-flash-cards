@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "watchify -vd -t babelify index.js -o main.js"
+    "watch": "watchify -vd -t babelify src/index.js -o public/main.js"
   },
   "repository": {
     "type": "git",

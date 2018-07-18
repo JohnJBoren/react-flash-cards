@@ -9,7 +9,7 @@ export default function ProgressBar(props) {
   }
   return (
     <div className="progress bar-progress border mx-auto">
-      <div 
+      <div
         className="progress-bar bg-success bar-progress" 
         style={ style }
         role="progressbar"></div>
