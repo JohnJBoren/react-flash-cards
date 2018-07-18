@@ -10,9 +10,8 @@
   align-items: center;
 }
 
-.list-style {
-  margin-top: 100px;
-  list-style-type: none;
+.practice {
+  position: relative;
 }
 
 .list-item,
@@ -22,8 +21,10 @@
   width: 500px;
 }
 
-.vertical-margin {
+.vertical-margin,
+.list-style {
   margin-top: 100px;
+  list-style-type: none;
 }
 
 .edit-button,
@@ -33,7 +34,7 @@
 }
 
 .arrow-nav {
-  line-height: 250px;
+  line-height: 150px;
 }
 
 .bar-current-progress {
@@ -44,6 +45,86 @@
   display: none;
 }
 
+.right-justify {
+  right: -15px;
+}
+
 .logo {
   float: left;
+}
+
+@keyframes slideInLeft {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.slideInLeft {
+  animation-duration: 0.75s;
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInRight {
+  from {
+    margin-left: -100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.slideInRight {
+  animation-duration: 0.75s;
+  animation-name: slideInRight
+}
+
+@keyframes slideOutLeft {
+  from {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  to {
+    margin-left: -100%;
+    width: 100%;
+  }
+}
+
+.slideOutLeft {
+  animation-duration: 0.75s;
+  animation-name: slideOutLeft;
+}
+
+@keyframes slideOutRight {
+  from {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 100%;
+    width: 100%;
+  }
+}
+
+.slideOutRight {
+  animation-duration: 0.75s;
+  animation-name: slideOutRight;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.fixed-width-500 {
+  width: 500px;
 }
