@@ -4,13 +4,15 @@ export default function ProgressBar(props) {
   const { cards, index } = props
   const progressLength = ((index + 1) / cards.length * 100)
   const style = {
-    backgroundColor: 'rgb(44, 220, 55)',
+    height: '25px',
     width: `${progressLength}%`
-
   }
   return (
-    <div className="bar-progress card mx-auto">
-      <div className="bar-current-progress" style={ style }></div>
+    <div className="progress bar-progress border mx-auto">
+      <div 
+        className="progress-bar bg-success bar-progress" 
+        style={ style }
+        role="progressbar"></div>
     </div>
   )
 }
