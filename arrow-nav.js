@@ -14,7 +14,7 @@ export default class ArrowNav extends React.Component {
     const { type } = this.props
     const direction = type === 'left'
       ? 'fa-angle-left'
-      : 'fa-angle-right'
+      : 'fa-angle-right right-justify'
 
     const activity = type === 'left'
       ? 'previous'
@@ -22,7 +22,7 @@ export default class ArrowNav extends React.Component {
     return (
       <i
         onClick={ this.handleClick }
-        className={'arrow-button fas fa-5x align-middle px-2 arrow-nav ' + direction }
+        className={'arrow-button position-absolute fas fa-5x align-middle px-2 arrow-nav ' + direction }
         name={ activity }>
       </i>
     )
