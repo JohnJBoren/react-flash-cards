@@ -34,9 +34,9 @@ export default class CardForm extends React.Component {
     const { question, answer } = editCard || { question: '', answer: '' }
 
     return (
-      <div className="horizontal-margin">
+      <div className="mx-auto">
         <form onSubmit= {this.handleSubmit} key={ id } className="card create-card">
-          <h2 className="text-center vertical-margin">{ formHeader }</h2>
+          <h2 className="text-center pt-3">{ formHeader }</h2>
           <div className="card-body">
             <div className="form-group">
               <label>Question</label>
