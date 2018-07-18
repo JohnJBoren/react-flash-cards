@@ -10,7 +10,7 @@ export default class Practice extends React.Component {
     this.handleAnswerChange = this.handleAnswerChange.bind(this)
     this.state = {
       currentIndex: 0,
-      showAnswer: false, 
+      showAnswer: false,
       transition: null
     }
   }
@@ -40,11 +40,9 @@ export default class Practice extends React.Component {
 
   render() {
     const { cards } = this.props
-    const isHidden = this.state.showAnswer ? '' : 'hidden'
     const showArrow = this.state.showAnswer
       ? 'fa-arrow-circle-down'
       : 'fa-arrow-circle-right'
-
 
     return (
       <div className="practice mx-auto">
@@ -56,13 +54,13 @@ export default class Practice extends React.Component {
             type="left"
             onSlideChange={ this.handleSlideChange }/>
           <div className="contain mx-auto">
-            <PracticeCard 
+            <PracticeCard
               cards={ cards }
               showAnswer={ this.handleAnswerChange}
               index={ this.state.currentIndex }
               showArrow={ showArrow }
               transition={ this.state.transition }
-              isHidden={ isHidden }/>
+              fade={ this.state.showAnswer }/>
           </div>
           <ArrowNav
             type="right"

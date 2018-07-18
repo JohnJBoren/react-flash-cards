@@ -33,6 +33,14 @@
   cursor: pointer;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.fixed-width-500 {
+  width: 500px;
+}
+
 .arrow-nav {
   line-height: 150px;
 }
@@ -121,10 +129,3 @@
   animation-name: slideOutRight;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.fixed-width-500 {
-  width: 500px;
-}

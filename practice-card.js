@@ -1,6 +1,7 @@
 import React from 'react'
+import { Fade } from 'reactstrap'
 
-export default function PracticeCard({ cards, showAnswer, showArrow, index, transition, isHidden }) {
+export default function PracticeCard({ cards, showAnswer, showArrow, index, transition, fade }) {
   let transitionClass
   if (transition === 'next') {
     transitionClass = 'slideInLeft'
@@ -15,8 +16,8 @@ export default function PracticeCard({ cards, showAnswer, showArrow, index, tran
     transitionClass = 'slideOutLeft'
   }
   return (
-    <div className="fixed-width-700">
-      <div className={'card practice-card fixed-width-700 text-center overflow-hidden ' + transitionClass}>
+    <div className="fixed-width-500">
+      <div className={'card practice-card fixed-width-500 text-center overflow-hidden ' + transitionClass}>
         <div className="row">
           <div className="card-body">
             <h2> { cards[index].question } </h2>
@@ -32,9 +33,9 @@ export default function PracticeCard({ cards, showAnswer, showArrow, index, tran
           </div>
         </div>
         <div className="row">
-          <div className={ 'card-body ' + isHidden }>
-            <p> { cards[index].answer } </p>
-          </div>
+          <Fade in={ fade } tag="p" className="mx-auto">
+            { cards[index].answer }
+          </Fade>
         </div>
       </div>
     </div>
