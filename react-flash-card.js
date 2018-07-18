@@ -3,7 +3,7 @@ import Nav from './nav'
 import CardList from './card-list'
 import EmptyList from './empty-list'
 import CardForm from './card-form'
-import PracticeCard from './practice-card'
+import Practice from './practice'
 import parseHash from './parse-hash'
 import * as queryString from './query-string'
 
@@ -23,8 +23,6 @@ export default class ReactFlashCards extends React.Component {
       path: path,
       params: params || {},
       currentIndex: 0,
-      showAnswer: false
-
     }
   }
 
@@ -39,7 +37,6 @@ export default class ReactFlashCards extends React.Component {
     window.addEventListener('beforeunload', () => {
       localStorage.setItem('nextId', JSON.stringify(this.state['nextId']))
       localStorage.setItem('cards', JSON.stringify(this.state['cards']))
-
     })
   }
 
@@ -114,7 +111,7 @@ export default class ReactFlashCards extends React.Component {
     }
     else {
       return (
-        <PracticeCard cards={ this.state.cards }/>
+        <Practice cards={ this.state.cards }/>
       )
     }
   }
