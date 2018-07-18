@@ -1,80 +1,42 @@
 import React from 'react'
-import ArrowNav from './arrow-nav'
-import ProgressBar from './progress-bar'
 
-export default class PracticeCard extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleSlideChange = this.handleSlideChange.bind(this)
-    this.handleAnswerChange = this.handleAnswerChange.bind(this)
-    this.state = {
-      currentIndex: 0,
-      showAnswer: false
-    }
+export default function PracticeCard({ cards, showAnswer, showArrow, index, transition, isHidden }) {
+  let transitionClass
+  if (transition === 'next') {
+    transitionClass = 'slideInLeft'
   }
-
-  handleSlideChange(action) {
-    const { cards } = this.props
-    const lastIndex = cards.length - 1
-    const currentIndex = this.state.currentIndex
-    if (action === 'previous') {
-      const shouldResetIndex = currentIndex === 0
-      const index = shouldResetIndex ? lastIndex : currentIndex - 1
-      this.setState({ currentIndex: index, showAnswer: false })
-    }
-    else {
-      const shouldResetIndex = currentIndex === lastIndex
-      const index = shouldResetIndex ? 0 : currentIndex + 1
-      this.setState({ currentIndex: index, showAnswer: false })
-    }
+  if (transition === 'prev') {
+    transitionClass = 'slideInRight'
   }
-
-  handleAnswerChange() {
-    const showAnswer = this.state.showAnswer
-    this.setState({ showAnswer: !showAnswer })
+  if (transition === 'transition-prev') {
+    transitionClass = 'slideOutRight'
   }
-
-  render() {
-    const { cards } = this.props
-    const isHidden = this.state.showAnswer ? '' : 'hidden'
-    const showArrow = this.state.showAnswer
-      ? 'fa-arrow-circle-down'
-      : 'fa-arrow-circle-right'
-    return (
-      <div className="practice mx-auto">
-        <div className="row vertical-margin">
-          <ProgressBar cards={ cards } index={ this.state.currentIndex }/>
+  if (transition === 'transition-next') {
+    transitionClass = 'slideOutLeft'
+  }
+  return (
+    <div className="fixed-width-700">
+      <div className={'card practice-card fixed-width-700 text-center overflow-hidden ' + transitionClass}>
+        <div className="row">
+          <div className="card-body">
+            <h2> { cards[index].question } </h2>
+          </div>
         </div>
         <div className="row">
-          <ArrowNav
-            type="left"
-            onSlideChange={ this.handleSlideChange }/>
-          <div className="card practice-card text-center">
-            <div className="row">
-              <div className="card-body">
-                <h2> { cards[this.state.currentIndex].question } </h2>
-              </div>
-            </div>
-            <div className="row">
-              <div className="card-body">
-                <i
-                  onClick={ this.handleAnswerChange }
-                  className={'arrow-button fas px-2 ' + showArrow }>
-                </i>
-                Show Answer
-              </div>
-            </div>
-            <div className="row">
-              <div className={ 'card-body ' + isHidden }>
-                <p> { cards[this.state.currentIndex].answer } </p>
-              </div>
-            </div>
+          <div className="card-body">
+            <i
+              onClick={ showAnswer }
+              className={'arrow-button fas px-2 ' + showArrow }>
+            </i>
+            Show Answer
           </div>
-          <ArrowNav
-            type="right"
-            onSlideChange={ this.handleSlideChange }/>
+        </div>
+        <div className="row">
+          <div className={ 'card-body ' + isHidden }>
+            <p> { cards[index].answer } </p>
+          </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
