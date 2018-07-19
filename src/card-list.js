@@ -22,7 +22,7 @@ export default class CardList extends React.Component {
   render() {
     const { cards } = this.props
     return (
-      <div className="flash fixed-width-1400">
+      <div className="flash fixed-width-1300">
         <ul className="list-style row">
           { cards.map((card, i) =>
             <li key={card.id} data-id={card.id} className="grid-card list-item col-4">
