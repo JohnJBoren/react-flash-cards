@@ -14,7 +14,6 @@
   position: relative;
 }
 
-.list-item,
 .practice-card,
 .bar-progress {
   margin-bottom: 10px;
@@ -37,8 +36,17 @@
   overflow: hidden;
 }
 
+.grid-card {
+  width: 425px;
+  margin-bottom: 10px;
+}
+
 .fixed-width-500 {
   width: 500px;
+}
+
+.fixed-width-1400 {
+  width: 1300px;
 }
 
 .arrow-nav {
@@ -47,10 +55,6 @@
 
 .bar-current-progress {
   height: 25px;
-}
-
-.hidden {
-  display: none;
 }
 
 .right-justify {

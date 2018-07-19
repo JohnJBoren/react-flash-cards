@@ -22,13 +22,13 @@ export default class CardList extends React.Component {
   render() {
     const { cards } = this.props
     return (
-      <div className="mx-auto">
-        <ul className="list-style">
+      <div className="flash fixed-width-1400">
+        <ul className="list-style row">
           { cards.map((card, i) =>
-            <li key={card.id} data-id={card.id} className="list-item">
+            <li key={card.id} data-id={card.id} className="grid-card list-item col-4">
               <div className="card">
                 <div className="card-body text-center">
-                  <h2> {card.question} </h2>
+                  <h5> {card.question} </h5>
                   <div> {card.answer} </div>
                   <div className="text-right">
                     <i onClick={ this.handleClick }
