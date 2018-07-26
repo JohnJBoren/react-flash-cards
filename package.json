@@ -6,8 +6,7 @@
   "scripts": {
     "build": "browserify -t babelify src/index.js -o public/main,js",
     "watch": "watchify -vd -t babelify src/index.js -o public/main.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
