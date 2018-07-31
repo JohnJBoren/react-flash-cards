@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/jeromechavez/react-flash-cards/issues"
   },
-  "homepage": "https://github.com/jeromechavez/react-flash-cards#readme",
+  "homepage": "https://github.com/jeromechavez/react-flash-cards",
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
