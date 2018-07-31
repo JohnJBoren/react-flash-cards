@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify -t babelify src/index.js -o public/main,js",
-    "watch": "watchify -vd -t babelify src/index.js -o public/main.js",
+    "build": "browserify -t babelify src/index.js -o main,js",
+    "watch": "watchify -vd -t babelify src/index.js -o main.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
